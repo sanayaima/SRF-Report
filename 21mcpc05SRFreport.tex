@@ -29,7 +29,7 @@
             \large \textbf{Dr. Naveen Nekuri}\\
 		\large \textbf{Dr. Odelu Vanga}\\
 		\vspace{1cm}
-        \includegraphics[scale=1.5]{images/UoH.png} \\
+        \includegraphics[scale=1.5]{figs/UoH.png} \\
         \vspace{0.5cm}
         \large School of Computer and Information Sciences \\
 		\textbf{University of Hyderabad} \\
@@ -116,7 +116,7 @@ Meibomian Gland Dysfunction is a prevalent ocular surface disorder characterized
 
 Eye-related diseases encompass a wide range of conditions affecting ocular health, with Meibomian gland dysfunction (MGD) being one of the most prevalent. MGD is characterized by abnormalities in the meibomian glands, leading to terminal duct obstruction and alterations in meibomian gland secretions. This dysfunction is a significant contributor to dry eye symptoms and is implicated in various ocular surface diseases worldwide, affecting millions of individuals and impacting their quality of life \cite{meiboworkshop}. MGD is multifactorial, its severity influenced by environmental conditions such as air pollution and humidity, as well as intrinsic factors like hormonal fluctuations and systemic diseases. The pathophysiology of MGD involves glandular obstruction and potential atrophy, often exacerbated by incomplete blinking and muscle dysfunction surrounding the meibomian glands. The glandular obstruction results in a compromised tear film and tear evaporates at a much faster rate. Rapid tear evaporation leads to symptomatic dry eye disease.
 
-In the early stages of MGD, the symptoms may be minimal. However, physical signs such as meibomian gland dropout and abnormalities in lid margin can be observed. Such abnormalities can be evaluated through imaging techninques such as infrared meibography. MGD coexists with various ocular and systemic diseases which makes the diagnosis and management complicated. Clinical diagnosis of MGD typically is a combination of patient-reported symptoms with objective assessment and classifying into several stages of severity. The ocular surface health is examined through various methods such as Ocular Surface Disease Index (OSDI), tear meniscus height (TMH), and tear break-up time (TBUT). Treatment of MGD is generally additive and depends on the severity of it. A patient diagnosed with Stage 3 MGD may receive interventions indicated for Stages 1 and 2 as well. Therapeutic treatment aims at alleviating symptoms and restoring normal gland function which ranges from artificial tear and anti-inflammatory medications to thermal pulsation treatment and meibomian gland expression \cite{geerling2011management}.
+In the early stages of MGD, the symptoms may be minimal. However, physical signs such as meibomian gland dropout and abnormalities in lid margin can be observed. Such abnormalities can be evaluated through imaging techniques such as infrared meibography. MGD coexists with various ocular and systemic diseases which makes the diagnosis and management complicated. Clinical diagnosis of MGD typically is a combination of patient-reported symptoms with objective assessment and classifying into several stages of severity. The ocular surface health is examined through various methods such as Ocular Surface Disease Index (OSDI), tear meniscus height (TMH), and tear break-up time (TBUT). Treatment of MGD is generally additive and depends on the severity of it. A patient diagnosed with Stage 3 MGD may receive interventions indicated for Stages 1 and 2 as well. Therapeutic treatment aims at alleviating symptoms and restoring normal gland function which ranges from artificial tear and anti-inflammatory medications to thermal pulsation treatment and meibomian gland expression \cite{geerling2011management}.
 
 While AI-driven tools like semantic segmentation and large language models (LLMs) automate and standardize diagnostics, existing solutions in ophthalmology are isolated  with segmentation models operating independently of clinical workflows and LLMs are underutilized for diagnostic summarization. %Digital twin technology addresses these limitations by enabling continuous interaction between physical data, computational models, and decision-support layers. Digital twin technology—a dynamic, virtual representation of physical entities—has emerged as a promising paradigm in healthcare to address these gaps by enabling real-time simulation, monitoring, and predictive diagnostics \cite{fuller2020digital}. While digital twins have seen successful applications in cardiology \cite{corral2020digital}, oncology \cite{bruynseels2018ethics}, and orthopedic modeling \cite{viceconti2018digital}, their potential in ophthalmology, particularly for glandular dysfunctions, remains largely unexplored. A brief comparison of such systems is shown in table \ref{tab:dt_comparision_table}. Several works in the AI-enabled digital twins are working toward applying diverse methods such as neuro-symbolic AI, Quantum Federated Learning, etc. in the clinical decision making \cite{neurosymbolicdt} \cite{digitaltwin5g} \cite{decidetwin}.
 
@@ -357,7 +357,7 @@ $I_{rgb} \gets \text{ConvertToRGB}(I)$\;
 $M \gets \texttt{[User, System]}$ chat message template with $I_{rgb}$ and prompt $\mathcal{Q}$\;
 
 $X \gets \mathcal{P}.\text{apply\_chat\_template}(M,$
-\texttt{add\_generation\_prompt=True})$\;
+$\texttt{add\_generation\_prompt=True})$\;
 
 $T \gets \mathcal{P}.\text{tokenize}(X,\texttt{return\_tensors="pt"})$\;
 
@@ -400,22 +400,22 @@ An interactive frontend is developed as a Streamlit web application serving as t
 %\subsection{Evaluation}
 The performance of the proposed Attention U-Net architecture was quantitatively evaluated on the test split (20\%) of the MGD-1k dataset, comprising 189 infrared meibography images. The evaluation focused on two key segmentation tasks: the eyelid boundary and the structures of the   meibomian gland. Table 1 shows the performance metrics: Dice Score, Intersection-over-Union (IoU), Precision, Recall and F1-Score for both segmentation modules. The eyelid region of interest segmentation task achieved a Dice Score of 0.961 and IoU of 0.926. This indicates the model’s robustness in accurately delineating the tarsal region. For the gland segmentation task, the model achieved a Dice Score of 0.881 and an IoU of 0.790. This indicates strong performance of segmentation despite the fine-grained and irregular morphology of the glands. In addition to these quantitative evaluations, a qualitative visualization of the segmentation result is presented in Figure 6. It displays a sample of the input infrared image, the predicted binary mask of the eyelid region, and the binary mask of the meibomian glands. This visual result shows that the model effectively isolates anatomical structures of the glands.
 
-\begin{table}[h]
-\centering
-\caption{Evaluation metrics of Attention U-Net on MGD-1k test set (20\% split)}
+%\begin{table}[h]
+%\centering
+%\caption{Evaluation metrics of Attention U-Net on MGD-1k test set (20\% split)}
 
-\begin{tabular}{lcc}
-\hline
-\textbf{Metric} & \textbf{Eyelid (mean $\pm$ 95\% CI)} & \textbf{Gland (mean $\pm$ 95\% CI)} \\
-\hline
-Dice Score  & $95.58 \pm 0.80$ & $74.28 \pm 5.19$ \\
-IoU         & $91.71 \pm 1.29$ & $59.69 \pm 5.98$ \\
-Precision   & $95.80 \pm 1.23$ & $75.39 \pm 5.04$ \\
-Recall      & $95.52 \pm 0.59$ & $75.58 \pm 10.07$ \\
-\hline
-\label{tab:eval-metrics}
-\end{tabular}
-\end{table}
+%\begin{tabular}{lcc}
+%\hline
+%\textbf{Metric} & \textbf{Eyelid (mean \pm 95\% CI)} & %\textbf{Gland (mean \pm 95\% CI)} \\
+%\hline
+%Dice Score  & 95.58  0.80 & 74.28 \pm 5.19 \\
+%IoU         & 91.71 \pm 1.29 & 59.69 \pm 5.98 \\
+%Precision   & 95.80 \pm 1.23 & 75.39 \pm 5.04 \\
+%Recall      & 95.52 \pm 0.59  & 75.58 \pm 10.07 \\
+%\hline
+%\label{tab:eval-metrics}
+%\end{tabular}
+%\end{table}
 
 
 

@@ -1,6 +1,6 @@
 {
   "name": "21MCPC05_SRF_Report",
-  "main_doc": "Thesis.tex",
+  "main_doc": "21mcpc05SRFreport.tex",
   "engine": "xetex",
   "checkpoints": {
     "mode": "engine_dependencies"
