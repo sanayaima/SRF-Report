@@ -1,0 +1,77 @@
+\chapter{Introduction}
+
+There is a beautiful saying, ``a picture is worth a thousand words'', which gives the essence of the importance of visualization. Humans are able to visualize the world, so it is easier to process data in a visual context. Data Visualization is a pictorial representation that transforms data into visual elements. Nowadays, users are required to analyze the data with the help of visualization. Visualization can be a powerful tool for communication, analysis, and decision-making. Visualization has many real-world applications in various fields like Business and Finance, Healthcare, Sports, Education, Science and Engineering. In Business and Finance, it can analyze financial data, such as stock prices, sales figures, and customer behavior, to identify trends and make better business decisions. Maps and graphs are frequently used for a better understanding of concepts rather than having long textual paragraphs. On one hand usage of maps and charts in daily life is increasing and it is an example of visualization. Data visualization plays a vital role in business and healthcare, enabling decision-makers to quickly comprehend complex information and make informed decisions. Data visualization transforms data into visual representations such as charts, graphs, and maps, making the data easier to process, analyze, and interpret. On the other hand data has been increasing rapidly over the internet and there is a need to represent and also provide insights to the data by applying visualization techniques. Therefore, data visualization plays a vital role in having a brief insight into the information.
+
+A visualization is recommended to the user by satisfying their requirements for a particular dataset. There have been many approaches like rule-based, machine learning approaches, knowledge graph embedding \sloppy{approaches} for recommending the visualization for the dataset. These approaches recommend visualization based on the rules, training a machine learning model by extracting features of data and by constructing knowledge graph from the data respectively. As per our study there was an approach of Maruta et al. \cite{maruta2021intent} works related to the visualization recommendation based on intent from the user. Intent is an english sentence that says about the requirement from the user. Using the intent for visualization recommendation makes the task easy to analyze and to provide accurate results desired by the user. 
+
+High dimensional data visualization refers to the techniques used to represent and display data that exists in more than three dimensions. The challenge in high-dimensional data visualization is the curse of dimensionality. As the number of dimensions in a dataset increases, the amount of data required to adequately cover the space grows exponentially. This means that high-dimensional datasets may be sparse, making it difficult to draw meaningful insights from the data. To address this challenge, the intent based incremental approach is used.
+
+Incremental visualization is a technique used in data visualization where data is updated dynamically in real-time. With the context of volume and velocity of big data which is being added to the existing data, it has been very difficult to provide visualization recommendation for incremental data. In this paper we proposed an Incremental Visualization Recommendation (IVR) which can handle challenges posed by volume and velocity. Our approach will recommend visualization to the incremental data by executing the visualization recommendation algorithm only on the incremental data, not from scratch (updated data). Hence, our proposed methodology is taking less time.
+
+The key contributions of the paper are stated below:
+\begin{itemize}
+    \item Developed and proposed IVR algorithm.
+    \begin{itemize}
+        \item Let p be our proposed algorithm, z is visualization recommendation, x be the existing data, hy is horizontal increment and vy is vertical increment.
+        \begin{itemize}
+            \item If \( p(x) \rightarrow z\) and \(p(hy) \rightarrow z\) then we can say \(p(x+(hy)) \rightarrow z\)
+            \item If \( p(x) \rightarrow z\) and \(p(vy) \rightarrow z\) then we can say \(p(x+(vy)) \rightarrow z\)
+        \end{itemize}
+        \item Visualization recommendation for horizontal and vertical increments of data.
+    \end{itemize}
+\end{itemize}
+
+
+
+
+Several data visualization techniques \cite{belkin2003laplacian,sammon1969nonlinear,Hinton2002,tsne,umap_reference,roweis2000nonlinear} transform high-dimensional data into lower dimensions, making it easier to interpret and analyze. Dimensionality reduction techniques can be broadly categorized into Linear and Non-Linear approaches. The Linear approach will reduce the dimensions by linearly mapping the features of the data. Linear approaches, such as PCA \cite{jolliffe2002principal}, are unsuitable for high-dimensional data, as they can only capture linear relationships within the data. The Non-Linear approach is suitable for visualizing data based on essential characteristics by maintaining (i) the global structure and (ii) the local structure of the data. These characteristics help to provide deeper insights and a more accurate representation of complex patterns.
+
+Most of the Non-Linear approaches \cite{tsne} \cite{umap_reference} in the literature primarily focused on retaining partial characteristics by preserving either the local structure or the global structure of the data. t-SNE \cite{tsne} approach visualizes the data by calculating the similarities of high-dimensional data and mapping them with those of low-dimensional data using a loss function. This approach has a drawback where much computation is involved while calculating the similarities of the data points.  UMAP \cite{umap_reference} generates a high-dimensional graph representation of the data, then constructs a similar low-dimensional graph, minimizing cross-entropy to preserve the original information in the reduced dimensional space.  This approach is more computationally efficient and robust in handling outliers than t-SNE \cite{tsne}. However, it may struggle to handle small datasets, resulting in overfitting or noisy visualizations.
+
+Visualizing the clusters is crucial in marketing and medicine to extract insights, identify patterns,  group customers based on behavior, and make better decisions. t-SNE \cite{tsne} preserves local structures but does not guarantee the preservation of global structures. UMAP \cite{umap_reference} focuses more on preserving global structures but can't guarantee the preservation of local structures. UMAP \cite{umap_reference} is more computationally efficient than t-SNE \cite{tsne}. 
+
+LAPtSNE \cite{sun2023laplacian}, leverages eigenvalues from the Laplacian graph matrix to form desired visual clusters in the reduced dimensional space by preserving both local and global structures. However, LAPtSNE \cite{sun2023laplacian} can preserve local and global structures but inherits computational challenges due to its adaptation of the t-SNE \cite{tsne} methodology to preserve the local structure. 
+
+
+
+
+
+Given the limitations of existing techniques and the increasing demand for real-world applications, there is a need for a new approach that can handle all types of characteristics involved with each of these methods and should be computationally efficient. Hence, we propose a novel approach, \textbf{\underline{H}}ybrid \textbf{\underline{M}}odel for \textbf{\underline{Q}}uality \textbf{\underline{C}}lusters in \underline{$\bm{v}$}isualization ($HM\_QCv$), which is a computationally efficient and comprehensive solution for high-dimensional data, capable of forming quality visual clusters by preserving local and global structures and robustly handling outliers. The efficacy and superiority of our approach are validated through experiments on benchmark datasets.
+
+
+
+\subsection{Research Questions}
+\begin{itemize}
+    \item \textbf{RQ1:} Is there an approach to produce visualizations for low- dimensional spaces more efficiently in less time?
+    \item \textbf{RQ2:} Is it feasible for any NLDR methodology to significantly improve the efficacy of cluster visualization within low-dimensional space? 
+    \item \textbf{RQ3:} Can any NLDR approach retain both local and global structures in a more efficient timeframe?
+\end{itemize} 
+
+
+
+
+\subsubsection{Research Outcome}
+\begin{itemize}
+
+\item \textbf{ROT1:} A Novel approach $HM\_QCv$ is developed that facilitates the visualization of quality clusters \textbf{(RQ2)} while maintaining the integrity of local and global structure \textbf{(RQ3)} in a more efficient temporal framework. \textbf{(RQ1)}
+
+\end{itemize}  
+
+
+\subsection{Significant Contributions}
+%Significant contributions are as follows:
+\begin{itemize}
+    \item The $HM\_QCv$ algorithm stands out for its computational efficiency, constructing a graph by minimizing the cross-entropy between high-dimensional and low-dimensional representations. It effectively captures high-dimensional data while being robust to outliers.
+    \item The $HM\_QCv$ algorithm, a key contribution of this research work, efficiently generates cluster-effective visualizations by leveraging the existing methods to enhance quality clusters in high-dimensional data.
+    \item The proposed approach preserves both the local and global structures in high-dimensional data.
+\end{itemize}
+
+
+
+
+
+
+
+
+
+

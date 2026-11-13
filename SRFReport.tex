@@ -1,0 +1,158 @@
+\documentclass[10pt,a4paper]{report}
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+\usepackage{graphicx}
+%\usepackage{float}
+\usepackage{subfig}
+%\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{indentfirst}
+\usepackage[export]{adjustbox}
+\usepackage{hyperref}
+\usepackage{color,soul}
+%\usepackage{amsmath}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\usepackage{blindtext}
+%\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{tikz}
+\usepackage[english]{babel}
+\usepackage[sort,comma,numbers]{natbib}
+\usepackage[final]{pdfpages}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{listings}%
+%\usepackage{bm}
+\usepackage{multirow}
+
+%\usepackage{graphicx}
+%\usepackage{multirow}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{booktabs}
+\usepackage{float}
+
+\usepackage{algpseudocode}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+
+\usepackage{enumitem}
+
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+
+\usepackage{hhline}
+
+\usepackage{bm}
+
+\usepackage{diagbox}
+%\usepackage{natbib}
+\usepackage{titlesec}
+
+
+
+\usepackage{graphicx}
+\usepackage{url}
+
+
+\definecolor{lightblue}{rgb}{.80,.85,1}
+\sethlcolor{lightblue}
+
+
+
+
+
+% Customize chapter heading
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries} % Format for chapter title
+  {\chaptername\ \thechapter} % Label format (e.g., Chapter 1)
+  {20pt} % Space between label and title
+  {\Huge} % Chapter title format
+  [\vspace{2ex}\titlerule] % Format for the title separator (line)
+
+% Customize section heading
+\titleformat{\section}
+  {\normalfont\Large\bfseries} % Format for section title
+  {\thesection} % Label format (e.g., 1.1)
+  {1em} % Space between label and title
+  {} % Before code
+  [] % After code
+
+% Adjust spacing before and after section headings
+\titlespacing{\section}{0pt}{0.85cm}{0.85cm}
+\titlespacing{\subsection}{0pt}{0.75cm}{0.75cm}
+\titlespacing{\subsubsection}{0pt}{0.5cm}{0.5cm}
+
+% Customize Acknowledgements, Declaration, and Contents headings without the line and less space
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\huge\bfseries}
+  {}
+  {20pt}
+  {\Huge}
+  [\vspace{1ex}]  % Adjust this value to reduce space
+
+% Specific customization for Declaration
+\newcommand{\declarationtitleformat}{%
+  \titleformat{name=\chapter,numberless}[display]
+    {\normalfont\huge\bfseries}
+    {}
+    {10pt} % Adjust this value to reduce space
+    {\Huge}
+    [] % No line after title
+}
+
+
+\begin{document}
+
+
+\input{./title.tex}
+
+
+
+
+% Reset title format for subsequent sections
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\huge\bfseries}
+  {}
+  {20pt}
+  {\Huge}
+  [\vspace{1ex}]
+  
+
+
+
+\newpage
+\pagenumbering{arabic}
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge} % Format for chapter title
+  %{\chaptername\ \thechapter} % Label format (e.g., Chapter 1)
+  %{20pt} % Space between label and title
+  %{\Huge} % Chapter title format
+  %[\vspace{2ex}\titlerule] % Format for the title separator (line)
+\input{./reportchapter_1.tex}
+\input{./reportintro.tex}
+\input{./reportrelatedwork.tex}
+\input{./reportIVRIntent.tex}
+\input{./reportHMQCv.tex}
+\input{./reportIVRFS.tex}
+\input{./reportconclusion.tex}
+
+% Uncomment the following lines if you have appendices and references
+%\input{./appendix.tex}
+%\input{./references.bib}
+%\mbox{}
+%\nocite{*}
+%\bibliographystyle{ieeetr}
+%\printbibliography
+
+\newpage
+\bibliography{references}
+\bibliographystyle{ieeetr}
+
+\end{document}

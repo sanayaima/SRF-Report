@@ -1,0 +1,13 @@
+{
+  "name": "21MCPC05_SRF_Report",
+  "main_doc": "Thesis.tex",
+  "engine": "xetex",
+  "checkpoints": {
+    "mode": "engine_dependencies"
+  },
+  "color": "",
+  "kind": "",
+  "exports": [],
+  "hidden": false,
+  "forked_from": null
+}
